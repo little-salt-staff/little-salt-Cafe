@@ -1,303 +1,329 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Little Salt Cafe & Restaurant</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+  <title>Little Salt Cafe</title>
 
-html{
-  scroll-behavior:smooth;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body{
-  font-family:Arial,"Tahoma",sans-serif;
-  background:#120b10;
-  color:#fff;
-  overflow-x:hidden;
-}
+    body {
+      font-family: "Arial", sans-serif;
+      background:
+        radial-gradient(circle at top, #ff8fb3 0%, #f24f83 35%, #160b12 100%);
+      color: #fff;
+      min-height: 100vh;
+      padding-bottom: 40px;
+    }
 
-/* NAVBAR */
-nav{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
-  padding:14px 20px;
-  background:rgba(18,11,16,.92);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid #54253b;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: auto;
+    }
 
-.logo{
-  font-size:20px;
-  font-weight:bold;
-  color:#ff8fbd;
-}
+    header {
+      text-align: center;
+      padding: 45px 15px 30px;
+    }
 
-.logo span{
-  color:#fff;
-}
+    .cat {
+      font-size: 65px;
+      animation: bounce 2s infinite;
+      filter: drop-shadow(0 5px 10px rgba(0,0,0,.35));
+    }
 
-nav a{
-  color:#fff;
-  text-decoration:none;
-  margin-left:15px;
-  font-size:13px;
-}
+    h1 {
+      font-size: 42px;
+      margin-top: 8px;
+      color: #fff;
+      text-shadow: 0 3px 12px rgba(0,0,0,.4);
+    }
 
-nav a:hover{
-  color:#ff8fbd;
-}
+    .subtitle {
+      margin-top: 8px;
+      font-size: 15px;
+      letter-spacing: 2px;
+      color: #ffe5ef;
+    }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  padding:120px 20px 70px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:
-    radial-gradient(circle at 50% 20%,#702b4b 0%,transparent 35%),
-    linear-gradient(145deg,#160b12,#351020,#12090e);
-  position:relative;
-}
+    .welcome {
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.3);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 18px;
+      text-align: center;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
 
-.sparkle{
-  position:absolute;
-  color:#ff9fc6;
-  font-size:25px;
-  animation:float 3s infinite ease-in-out;
-}
+    .welcome span {
+      font-size: 24px;
+    }
 
-.s1{top:18%;left:15%}
-.s2{top:28%;right:12%;animation-delay:1s}
-.s3{bottom:20%;left:20%;animation-delay:2s}
-.s4{bottom:28%;right:18%;animation-delay:.5s}
+    .menu-section {
+      background: rgba(20,8,15,.82);
+      border: 1px solid rgba(255,143,179,.4);
+      border-radius: 25px;
+      margin: 20px 0;
+      padding: 22px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.3);
+    }
 
-@keyframes float{
-  0%,100%{transform:translateY(0) rotate(0deg);opacity:.5}
-  50%{transform:translateY(-15px) rotate(15deg);opacity:1}
-}
+    .menu-title {
+      color: #ff8fb3;
+      font-size: 25px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
 
-.cat{
-  font-size:90px;
-  margin-bottom:10px;
-  animation:cat 3s infinite ease-in-out;
-}
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 10px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      transition: .25s;
+    }
 
-@keyframes cat{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-8px)}
-}
+    .menu-item:last-child {
+      border-bottom: none;
+    }
 
-.hero h1{
-  font-size:clamp(38px,9vw,72px);
-  color:#ff9fc6;
-  text-shadow:0 0 25px rgba(255,100,170,.35);
-  margin-bottom:8px;
-}
+    .menu-item:hover {
+      background: rgba(255,143,179,.1);
+      border-radius: 12px;
+      transform: translateX(4px);
+    }
 
-.hero h2{
-  font-size:20px;
-  letter-spacing:3px;
-  margin-bottom:18px;
-}
+    .number {
+      color: #ff8fb3;
+      font-weight: bold;
+      min-width: 25px;
+    }
 
-.hero p{
-  max-width:600px;
-  margin:auto;
-  color:#f5cddd;
-  line-height:1.8;
-}
+    .item-name {
+      flex: 1;
+      font-size: 16px;
+    }
 
-.btn{
-  display:inline-block;
-  margin-top:28px;
-  padding:13px 27px;
-  border-radius:30px;
-  background:#ff6fae;
-  color:#fff;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 8px 25px rgba(255,80,150,.3);
-  transition:.3s;
-}
+    .paw {
+      color: #ff8fb3;
+    }
 
-.btn:hover{
-  transform:translateY(-4px);
-  background:#ff8fbd;
-}
+    .contact {
+      text-align: center;
+      margin-top: 30px;
+      padding: 25px;
+      background: rgba(255,255,255,.1);
+      border-radius: 25px;
+    }
 
-/* SECTIONS */
-section{
-  padding:80px 20px;
-}
+    .contact h2 {
+      color: #ff8fb3;
+      margin-bottom: 10px;
+    }
 
-.section-title{
-  text-align:center;
-  margin-bottom:45px;
-}
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #ffd3e1;
+      font-size: 13px;
+    }
 
-.section-title .mini{
-  color:#ff83b7;
-  font-size:14px;
-  letter-spacing:3px;
-}
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
 
-.section-title h2{
-  font-size:34px;
-  margin-top:8px;
-}
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 32px;
+      }
 
-.section-title p{
-  color:#d9aabd;
-  margin-top:10px;
-}
+      .cat {
+        font-size: 55px;
+      }
 
-/* ABOUT */
-.about{
-  background:#1b0e15;
-}
+      .menu-section {
+        padding: 17px;
+      }
 
-.about-box{
-  max-width:900px;
-  margin:auto;
-  padding:35px;
-  border:1px solid #633149;
-  border-radius:25px;
-  background:linear-gradient(145deg,#25121c,#160c12);
-  text-align:center;
-}
+      .item-name {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
 
-.about-box p{
-  color:#e9c5d5;
-  line-height:2;
-}
+<body>
 
-/* MENU */
-.menu{
-  background:#120a0f;
-}
+  <div class="container">
 
-.menu-grid{
-  max-width:1000px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:20px;
-}
+    <header>
+      <div class="cat">🐈‍⬛</div>
+      <h1>Little Salt Cafe</h1>
+      <p class="subtitle">CAFE & RESTAURANT</p>
+    </header>
 
-.card{
-  background:linear-gradient(145deg,#29131e,#180c12);
-  border:1px solid #603148;
-  border-radius:22px;
-  padding:25px;
-  transition:.3s;
-  position:relative;
-  overflow:hidden;
-}
+    <div class="welcome">
+      <span>☕ 🍱 🥩 🐈‍⬛</span>
+      <p style="margin-top:10px;">
+        Welcome to Little Salt Cafe
+      </p>
+      <p style="margin-top:6px; color:#ffdce8;">
+        Good Food • Good Mood
+      </p>
+    </div>
 
-.card:hover{
-  transform:translateY(-7px);
-  border-color:#ff75ae;
-  box-shadow:0 15px 35px rgba(255,80,150,.15);
-}
 
-.card-icon{
-  font-size:45px;
-  margin-bottom:12px;
-}
+    <!-- Bento Set -->
+    <section class="menu-section">
+      <h2 class="menu-title">🍱 Bento Set</h2>
 
-.card h3{
-  color:#ff9fc6;
-  margin-bottom:10px;
-}
+      <div class="menu-item">
+        <span class="number">01</span>
+        <span class="item-name">Nordic Beef Bento</span>
+        <span class="paw">🐾</span>
+      </div>
 
-.card p{
-  color:#cfaaba;
-  font-size:14px;
-  line-height:1.7;
-}
+      <div class="menu-item">
+        <span class="number">02</span>
+        <span class="item-name">Genmaicha</span>
+        <span class="paw">🐾</span>
+      </div>
 
-.price{
-  margin-top:16px;
-  color:#fff;
-  font-weight:bold;
-  font-size:18px;
-}
+      <div class="menu-item">
+        <span class="number">03</span>
+        <span class="item-name">Chocolate Cube</span>
+        <span class="paw">🐾</span>
+      </div>
+    </section>
 
-/* STAFF */
-.staff{
-  background:#1b0e15;
-}
 
-.staff-grid{
-  max-width:900px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:18px;
-}
+    <!-- Wagyu Set -->
+    <section class="menu-section">
+      <h2 class="menu-title">🥩 Wagyu Set</h2>
 
-.staff-card{
-  text-align:center;
-  padding:25px;
-  border-radius:20px;
-  background:#25121c;
-  border:1px solid #593047;
-}
+      <div class="menu-item">
+        <span class="number">01</span>
+        <span class="item-name">Wagyu Lava Curry</span>
+        <span class="paw">🐾</span>
+      </div>
 
-.staff-icon{
-  width:75px;
-  height:75px;
-  margin:0 auto 15px;
-  border-radius:50%;
-  background:#ff77af;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:38px;
-}
+      <div class="menu-item">
+        <span class="number">02</span>
+        <span class="item-name">Sakura Lychee Milk</span>
+        <span class="paw">🐾</span>
+      </div>
 
-.staff-card h3{
-  color:#fff;
-}
+      <div class="menu-item">
+        <span class="number">03</span>
+        <span class="item-name">Yuzu Cheesecake Mochi</span>
+        <span class="paw">🐾</span>
+      </div>
+    </section>
 
-.staff-card p{
-  color:#d29db4;
-  margin-top:6px;
-}
 
-/* INFO */
-.info{
-  background:#120a0f;
-}
+    <!-- Fugu Set -->
+    <section class="menu-section">
+      <h2 class="menu-title">🐡 Fugu Set</h2>
 
-.info-box{
-  max-width:850px;
-  margin:auto;
-  display:grid;
-  gap:15px;
-}
+      <div class="menu-item">
+        <span class="number">01</span>
+        <span class="item-name">Fugu Sashimi</span>
+        <span class="paw">🐾</span>
+      </div>
 
-.info-item{
-  padding:20px;
-  border-radius:18px;
-  background:#21101a;
-  border:1px solid #543047;
-}
+      <div class="menu-item">
+        <span class="number">02</span>
+        <span class="item-name">Nihonshu</span>
+        <span class="paw">🐾</span>
+      </div>
 
-.info-item strong{
-  color:#
+      <div class="menu-item">
+        <span class="number">03</span>
+        <span class="item-name">Anmitsu</span>
+        <span class="paw">🐾</span>
+      </div>
+    </section>
+
+
+    <!-- Cafe Set -->
+    <section class="menu-section">
+      <h2 class="menu-title">☕ Café Set</h2>
+
+      <div class="menu-item">
+        <span class="number">01</span>
+        <span class="item-name">Sandwich</span>
+        <span class="paw">🐾</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="number">02</span>
+        <span class="item-name">Brown Sugar Milk Boba / Cappuccino</span>
+        <span class="paw">🐾</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="number">03</span>
+        <span class="item-name">Strawberry Cheesecake</span>
+        <span class="paw">🐾</span>
+      </div>
+    </section>
+
+
+    <!-- Others -->
+    <section class="menu-section">
+      <h2 class="menu-title">🖤 Others</h2>
+
+      <div class="menu-item">
+        <span class="number">01</span>
+        <span class="item-name">Black Rice Lager</span>
+        <span class="paw">🐾</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="number">02</span>
+        <span class="item-name">RGW Cigarettes</span>
+        <span class="paw">🐾</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="number">03</span>
+        <span class="item-name">Miso Soup</span>
+        <span class="paw">🐾</span>
+      </div>
+    </section>
+
+
+    <div class="contact">
+      <h2>🐈‍⬛ Little Salt Cafe</h2>
+      <p>Thank you for visiting us ♡</p>
+      <p style="margin-top:8px;">
+        Cafe & Restaurant
+      </p>
+    </div>
+
+    <footer>
+      © 2026 Little Salt Cafe • Made with ♡
+    </footer>
+
+  </div>
+
+</body>
+</html>
+  
+  
