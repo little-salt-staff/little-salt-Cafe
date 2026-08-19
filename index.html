@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little Salt Staff</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(160deg, #ffd6e5, #fff5f8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #171217;
+}
+
+.app {
+    width: 100%;
+    max-width: 430px;
+    padding: 25px;
+}
+
+.logo {
+    text-align: center;
+    font-size: 70px;
+    margin-bottom: 5px;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #8b6f79;
+    margin: 5px 0 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 28px;
+    padding: 25px;
+    box-shadow: 0 15px 40px rgba(180, 40, 90, 0.15);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #f1d5df;
+    border-radius: 15px;
+    font-size: 16px;
+    margin-bottom: 18px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    background: #d92f70;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.pin {
+    text-align: center;
+    letter-spacing: 8px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #9a7b86;
+    font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <div class="logo">🐈‍⬛</div>
+
+    <h1>Little Salt Staff</h1>
+
+    <div class="subtitle">
+        Cafe & Restaurant
+    </div>
+
+    <div class="card">
+
+        <label>👤 เลือกพนักงาน</label>
+
+        <select>
+            <option>-- เลือกชื่อพนักงาน --</option>
+            <option>พนักงาน A</option>
+            <option>พนักงาน B</option>
+            <option>พนักงาน C</option>
+        </select>
+
+        <label>🔐 PIN 4 หลัก</label>
+
+        <input
+            class="pin"
+            type="password"
+            maxlength="4"
+            placeholder="••••"
+        >
+
+        <button onclick="login()">
+            เข้าสู่ระบบ
+        </button>
+
+    </div>
+
+    <div class="footer">
+        🩷 Little Salt Cafe Staff System
+    </div>
+
+</div>
+
+<script>
+
+function login() {
+    alert("เข้าสู่ระบบสำเร็จ 🐈‍⬛🩷");
+}
+
+</script>
+
+</body>
+</html>
