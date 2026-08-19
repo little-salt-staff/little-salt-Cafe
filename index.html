@@ -3,148 +3,301 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Little Salt Staff</title>
+<title>Little Salt Cafe & Restaurant</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(160deg, #ffd6e5, #fff5f8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #171217;
+html{
+  scroll-behavior:smooth;
 }
 
-.app {
-    width: 100%;
-    max-width: 430px;
-    padding: 25px;
+body{
+  font-family:Arial,"Tahoma",sans-serif;
+  background:#120b10;
+  color:#fff;
+  overflow-x:hidden;
 }
 
-.logo {
-    text-align: center;
-    font-size: 70px;
-    margin-bottom: 5px;
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  padding:14px 20px;
+  background:rgba(18,11,16,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #54253b;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-h1 {
-    text-align: center;
-    margin: 0;
-    font-size: 30px;
+.logo{
+  font-size:20px;
+  font-weight:bold;
+  color:#ff8fbd;
 }
 
-.subtitle {
-    text-align: center;
-    color: #8b6f79;
-    margin: 5px 0 25px;
+.logo span{
+  color:#fff;
 }
 
-.card {
-    background: white;
-    border-radius: 28px;
-    padding: 25px;
-    box-shadow: 0 15px 40px rgba(180, 40, 90, 0.15);
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:15px;
+  font-size:13px;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+nav a:hover{
+  color:#ff8fbd;
 }
 
-select,
-input {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #f1d5df;
-    border-radius: 15px;
-    font-size: 16px;
-    margin-bottom: 18px;
-    outline: none;
+/* HERO */
+.hero{
+  min-height:100vh;
+  padding:120px 20px 70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    radial-gradient(circle at 50% 20%,#702b4b 0%,transparent 35%),
+    linear-gradient(145deg,#160b12,#351020,#12090e);
+  position:relative;
 }
 
-button {
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 16px;
-    background: #d92f70;
-    color: white;
-    font-size: 17px;
-    font-weight: bold;
+.sparkle{
+  position:absolute;
+  color:#ff9fc6;
+  font-size:25px;
+  animation:float 3s infinite ease-in-out;
 }
 
-.pin {
-    text-align: center;
-    letter-spacing: 8px;
+.s1{top:18%;left:15%}
+.s2{top:28%;right:12%;animation-delay:1s}
+.s3{bottom:20%;left:20%;animation-delay:2s}
+.s4{bottom:28%;right:18%;animation-delay:.5s}
+
+@keyframes float{
+  0%,100%{transform:translateY(0) rotate(0deg);opacity:.5}
+  50%{transform:translateY(-15px) rotate(15deg);opacity:1}
 }
 
-.footer {
-    text-align: center;
-    margin-top: 20px;
-    color: #9a7b86;
-    font-size: 12px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="app">
-
-    <div class="logo">🐈‍⬛</div>
-
-    <h1>Little Salt Staff</h1>
-
-    <div class="subtitle">
-        Cafe & Restaurant
-    </div>
-
-    <div class="card">
-
-        <label>👤 เลือกพนักงาน</label>
-
-        <select>
-            <option>-- เลือกชื่อพนักงาน --</option>
-            <option>พนักงาน A</option>
-            <option>พนักงาน B</option>
-            <option>พนักงาน C</option>
-        </select>
-
-        <label>🔐 PIN 4 หลัก</label>
-
-        <input
-            class="pin"
-            type="password"
-            maxlength="4"
-            placeholder="••••"
-        >
-
-        <button onclick="login()">
-            เข้าสู่ระบบ
-        </button>
-
-    </div>
-
-    <div class="footer">
-        🩷 Little Salt Cafe Staff System
-    </div>
-
-</div>
-
-<script>
-
-function login() {
-    alert("เข้าสู่ระบบสำเร็จ 🐈‍⬛🩷");
+.cat{
+  font-size:90px;
+  margin-bottom:10px;
+  animation:cat 3s infinite ease-in-out;
 }
 
-</script>
+@keyframes cat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
 
-</body>
-</html>
+.hero h1{
+  font-size:clamp(38px,9vw,72px);
+  color:#ff9fc6;
+  text-shadow:0 0 25px rgba(255,100,170,.35);
+  margin-bottom:8px;
+}
+
+.hero h2{
+  font-size:20px;
+  letter-spacing:3px;
+  margin-bottom:18px;
+}
+
+.hero p{
+  max-width:600px;
+  margin:auto;
+  color:#f5cddd;
+  line-height:1.8;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:28px;
+  padding:13px 27px;
+  border-radius:30px;
+  background:#ff6fae;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 8px 25px rgba(255,80,150,.3);
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-4px);
+  background:#ff8fbd;
+}
+
+/* SECTIONS */
+section{
+  padding:80px 20px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title .mini{
+  color:#ff83b7;
+  font-size:14px;
+  letter-spacing:3px;
+}
+
+.section-title h2{
+  font-size:34px;
+  margin-top:8px;
+}
+
+.section-title p{
+  color:#d9aabd;
+  margin-top:10px;
+}
+
+/* ABOUT */
+.about{
+  background:#1b0e15;
+}
+
+.about-box{
+  max-width:900px;
+  margin:auto;
+  padding:35px;
+  border:1px solid #633149;
+  border-radius:25px;
+  background:linear-gradient(145deg,#25121c,#160c12);
+  text-align:center;
+}
+
+.about-box p{
+  color:#e9c5d5;
+  line-height:2;
+}
+
+/* MENU */
+.menu{
+  background:#120a0f;
+}
+
+.menu-grid{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:linear-gradient(145deg,#29131e,#180c12);
+  border:1px solid #603148;
+  border-radius:22px;
+  padding:25px;
+  transition:.3s;
+  position:relative;
+  overflow:hidden;
+}
+
+.card:hover{
+  transform:translateY(-7px);
+  border-color:#ff75ae;
+  box-shadow:0 15px 35px rgba(255,80,150,.15);
+}
+
+.card-icon{
+  font-size:45px;
+  margin-bottom:12px;
+}
+
+.card h3{
+  color:#ff9fc6;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#cfaaba;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.price{
+  margin-top:16px;
+  color:#fff;
+  font-weight:bold;
+  font-size:18px;
+}
+
+/* STAFF */
+.staff{
+  background:#1b0e15;
+}
+
+.staff-grid{
+  max-width:900px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:18px;
+}
+
+.staff-card{
+  text-align:center;
+  padding:25px;
+  border-radius:20px;
+  background:#25121c;
+  border:1px solid #593047;
+}
+
+.staff-icon{
+  width:75px;
+  height:75px;
+  margin:0 auto 15px;
+  border-radius:50%;
+  background:#ff77af;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:38px;
+}
+
+.staff-card h3{
+  color:#fff;
+}
+
+.staff-card p{
+  color:#d29db4;
+  margin-top:6px;
+}
+
+/* INFO */
+.info{
+  background:#120a0f;
+}
+
+.info-box{
+  max-width:850px;
+  margin:auto;
+  display:grid;
+  gap:15px;
+}
+
+.info-item{
+  padding:20px;
+  border-radius:18px;
+  background:#21101a;
+  border:1px solid #543047;
+}
+
+.info-item strong{
+  color:#
