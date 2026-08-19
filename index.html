@@ -1,329 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Little Salt Cafe</title>
+<title>Little Salt Café</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: "Arial", sans-serif;
-      background:
-        radial-gradient(circle at top, #ff8fb3 0%, #f24f83 35%, #160b12 100%);
-      color: #fff;
-      min-height: 100vh;
-      padding-bottom: 40px;
-    }
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, #ff8fbd 0%, transparent 35%),
+    radial-gradient(circle at bottom right, #ff4f9a 0%, transparent 35%),
+    linear-gradient(135deg, #ffd1e3, #ff76ae 45%, #171217 100%);
+  color: #171217;
+  padding: 25px 15px;
+}
 
-    .container {
-      width: 92%;
-      max-width: 900px;
-      margin: auto;
-    }
+.container {
+  max-width: 900px;
+  margin: auto;
+}
 
-    header {
-      text-align: center;
-      padding: 45px 15px 30px;
-    }
+/* Header */
+.header {
+  text-align: center;
+  background: rgba(255,255,255,0.88);
+  border: 4px solid #171217;
+  border-radius: 30px;
+  padding: 30px 20px;
+  box-shadow: 8px 8px 0 #171217;
+  margin-bottom: 25px;
+}
 
-    .cat {
-      font-size: 65px;
-      animation: bounce 2s infinite;
-      filter: drop-shadow(0 5px 10px rgba(0,0,0,.35));
-    }
+.cat {
+  font-size: 55px;
+  margin-bottom: 8px;
+}
 
-    h1 {
-      font-size: 42px;
-      margin-top: 8px;
-      color: #fff;
-      text-shadow: 0 3px 12px rgba(0,0,0,.4);
-    }
+.header h1 {
+  font-size: clamp(35px, 8vw, 65px);
+  color: #e8327d;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
 
-    .subtitle {
-      margin-top: 8px;
-      font-size: 15px;
-      letter-spacing: 2px;
-      color: #ffe5ef;
-    }
+.header h2 {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #171217;
+}
 
-    .welcome {
-      background: rgba(255,255,255,.14);
-      border: 1px solid rgba(255,255,255,.3);
-      backdrop-filter: blur(10px);
-      border-radius: 25px;
-      padding: 18px;
-      text-align: center;
-      margin-bottom: 25px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-    }
+.subtitle {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #6e5360;
+}
 
-    .welcome span {
-      font-size: 24px;
-    }
+/* Menu grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
 
-    .menu-section {
-      background: rgba(20,8,15,.82);
-      border: 1px solid rgba(255,143,179,.4);
-      border-radius: 25px;
-      margin: 20px 0;
-      padding: 22px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.3);
-    }
+/* Menu card */
+.menu-card {
+  background: rgba(255,255,255,0.94);
+  border: 3px solid #171217;
+  border-radius: 25px;
+  padding: 22px;
+  box-shadow: 6px 6px 0 #171217;
+  transition: 0.2s;
+}
 
-    .menu-title {
-      color: #ff8fb3;
-      font-size: 25px;
-      margin-bottom: 16px;
-      text-align: center;
-    }
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 10px 0 #171217;
+}
 
-    .menu-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 10px;
-      border-bottom: 1px solid rgba(255,255,255,.12);
-      transition: .25s;
-    }
+.menu-card.full {
+  grid-column: 1 / -1;
+}
 
-    .menu-item:last-child {
-      border-bottom: none;
-    }
+.menu-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e8327d;
+  font-size: 25px;
+  font-weight: 900;
+  border-bottom: 2px dashed #ff75ad;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+}
 
-    .menu-item:hover {
-      background: rgba(255,143,179,.1);
-      border-radius: 12px;
-      transform: translateX(4px);
-    }
+.menu-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #171217;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 16px;
+}
 
-    .number {
-      color: #ff8fb3;
-      font-weight: bold;
-      min-width: 25px;
-    }
+ul {
+  list-style: none;
+}
 
-    .item-name {
-      flex: 1;
-      font-size: 16px;
-    }
+li {
+  background: #fff1f7;
+  border-radius: 15px;
+  padding: 13px 15px;
+  margin: 9px 0;
+  font-size: 16px;
+  font-weight: 700;
+  border-left: 5px solid #e8327d;
+}
 
-    .paw {
-      color: #ff8fb3;
-    }
+li span {
+  color: #e8327d;
+}
 
-    .contact {
-      text-align: center;
-      margin-top: 30px;
-      padding: 25px;
-      background: rgba(255,255,255,.1);
-      border-radius: 25px;
-    }
+/* Footer */
+.footer {
+  margin-top: 30px;
+  text-align: center;
+  background: #171217;
+  color: white;
+  border-radius: 25px;
+  padding: 22px;
+  border: 3px solid #171217;
+}
 
-    .contact h2 {
-      color: #ff8fb3;
-      margin-bottom: 10px;
-    }
+.footer strong {
+  color: #ff76ae;
+  font-size: 20px;
+}
 
-    footer {
-      text-align: center;
-      margin-top: 30px;
-      color: #ffd3e1;
-      font-size: 13px;
-    }
+.footer p {
+  margin-top: 7px;
+  font-size: 13px;
+  color: #ffd1e3;
+}
 
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-8px);
-      }
-    }
+/* Mobile */
+@media (max-width: 650px) {
+  body {
+    padding: 15px 10px;
+  }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 32px;
-      }
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
 
-      .cat {
-        font-size: 55px;
-      }
+  .menu-card.full {
+    grid-column: auto;
+  }
 
-      .menu-section {
-        padding: 17px;
-      }
+  .header {
+    padding: 25px 15px;
+  }
 
-      .item-name {
-        font-size: 14px;
-      }
-    }
-  </style>
+  .cat {
+    font-size: 45px;
+  }
+
+  .menu-title {
+    font-size: 22px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <header>
-      <div class="cat">🐈‍⬛</div>
-      <h1>Little Salt Cafe</h1>
-      <p class="subtitle">CAFE & RESTAURANT</p>
-    </header>
+  <!-- Header -->
+  <header class="header">
+    <div class="cat">🐈‍⬛</div>
 
-    <div class="welcome">
-      <span>☕ 🍱 🥩 🐈‍⬛</span>
-      <p style="margin-top:10px;">
-        Welcome to Little Salt Cafe
-      </p>
-      <p style="margin-top:6px; color:#ffdce8;">
-        Good Food • Good Mood
-      </p>
-    </div>
+    <h1>Little Salt Café</h1>
 
+    <h2>☕ Café & Restaurant 🍱</h2>
+
+    <p class="subtitle">
+      Good Food • Good Mood • Cute Little Moments ♡
+    </p>
+  </header>
+
+
+  <!-- Menu -->
+  <main class="menu-grid">
 
     <!-- Bento Set -->
-    <section class="menu-section">
-      <h2 class="menu-title">🍱 Bento Set</h2>
+    <section class="menu-card">
+      <h2 class="menu-title">
+        🍱 Bento Set
+      </h2>
 
-      <div class="menu-item">
-        <span class="number">01</span>
-        <span class="item-name">Nordic Beef Bento</span>
-        <span class="paw">🐾</span>
-      </div>
+      <ul>
+        <li>
+          <span>01.</span> Nordic Beef Bento
+        </li>
 
-      <div class="menu-item">
-        <span class="number">02</span>
-        <span class="item-name">Genmaicha</span>
-        <span class="paw">🐾</span>
-      </div>
+        <li>
+          <span>02.</span> Genmaicha
+        </li>
 
-      <div class="menu-item">
-        <span class="number">03</span>
-        <span class="item-name">Chocolate Cube</span>
-        <span class="paw">🐾</span>
-      </div>
+        <li>
+          <span>03.</span> Chocolate Cube
+        </li>
+      </ul>
     </section>
 
 
     <!-- Wagyu Set -->
-    <section class="menu-section">
-      <h2 class="menu-title">🥩 Wagyu Set</h2>
+    <section class="menu-card">
+      <h2 class="menu-title">
+        🥩 Wagyu Set
+      </h2>
 
-      <div class="menu-item">
-        <span class="number">01</span>
-        <span class="item-name">Wagyu Lava Curry</span>
-        <span class="paw">🐾</span>
-      </div>
+      <ul>
+        <li>
+          <span>01.</span> Wagyu Lava Curry
+        </li>
 
-      <div class="menu-item">
-        <span class="number">02</span>
-        <span class="item-name">Sakura Lychee Milk</span>
-        <span class="paw">🐾</span>
-      </div>
+        <li>
+          <span>02.</span> Sakura Lychee Milk
+        </li>
 
-      <div class="menu-item">
-        <span class="number">03</span>
-        <span class="item-name">Yuzu Cheesecake Mochi</span>
-        <span class="paw">🐾</span>
-      </div>
+        <li>
+          <span>03.</span> Yuzu Cheesecake Mochi
+        </li>
+      </ul>
     </section>
 
 
     <!-- Fugu Set -->
-    <section class="menu-section">
-      <h2 class="menu-title">🐡 Fugu Set</h2>
+    <section class="menu-card">
+      <h2 class="menu-title">
+        🐡 Fugu Set
+      </h2>
 
-      <div class="menu-item">
-        <span class="number">01</span>
-        <span class="item-name">Fugu Sashimi</span>
-        <span class="paw">🐾</span>
-      </div>
+      <ul>
+        <li>
+          <span>01.</span> Fugu Sashimi
+        </li>
 
-      <div class="menu-item">
-        <span class="number">02</span>
-        <span class="item-name">Nihonshu</span>
-        <span class="paw">🐾</span>
-      </div>
+        <li>
+          <span>02.</span> Nihonshu
+        </li>
 
-      <div class="menu-item">
-        <span class="number">03</span>
-        <span class="item-name">Anmitsu</span>
-        <span class="paw">🐾</span>
-      </div>
+        <li>
+          <span>03.</span> Anmitsu
+        </li>
+      </ul>
     </section>
 
 
     <!-- Cafe Set -->
-    <section class="menu-section">
-      <h2 class="menu-title">☕ Café Set</h2>
+    <section class="menu-card">
+      <h2 class="menu-title">
+        ☕ Café Set
+      </h2>
 
-      <div class="menu-item">
-        <span class="number">01</span>
-        <span class="item-name">Sandwich</span>
-        <span class="paw">🐾</span>
-      </div>
+      <ul>
+        <li>
+          <span>01.</span> Sandwich
+        </li>
 
-      <div class="menu-item">
-        <span class="number">02</span>
-        <span class="item-name">Brown Sugar Milk Boba / Cappuccino</span>
-        <span class="paw">🐾</span>
-      </div>
+        <li>
+          <span>02.</span> Brown Sugar Milk Boba / Cappuccino
+        </li>
 
-      <div class="menu-item">
-        <span class="number">03</span>
-        <span class="item-name">Strawberry Cheesecake</span>
-        <span class="paw">🐾</span>
-      </div>
+        <li>
+          <span>03.</span> Strawberry Cheesecake
+        </li>
+      </ul>
     </section>
 
 
     <!-- Others -->
-    <section class="menu-section">
-      <h2 class="menu-title">🖤 Others</h2>
+    <section class="menu-card full">
+      <h2 class="menu-title">
+        ✨ Others
+      </h2>
 
-      <div class="menu-item">
-        <span class="number">01</span>
-        <span class="item-name">Black Rice Lager</span>
-        <span class="paw">🐾</span>
-      </div>
+      <ul>
+        <li>
+          <span>01.</span> Black Rice Lager
+        </li>
 
-      <div class="menu-item">
-        <span class="number">02</span>
-        <span class="item-name">RGW Cigarettes</span>
-        <span class="paw">🐾</span>
-      </div>
+        <li>
+          <span>02.</span> RGW Cigarettes
+        </li>
 
-      <div class="menu-item">
-        <span class="number">03</span>
-        <span class="item-name">Miso Soup</span>
-        <span class="paw">🐾</span>
-      </div>
+        <li>
+          <span>03.</span> Miso Soup
+        </li>
+      </ul>
     </section>
 
+  </main>
 
-    <div class="contact">
-      <h2>🐈‍⬛ Little Salt Cafe</h2>
-      <p>Thank you for visiting us ♡</p>
-      <p style="margin-top:8px;">
-        Cafe & Restaurant
-      </p>
-    </div>
 
-    <footer>
-      © 2026 Little Salt Cafe • Made with ♡
-    </footer>
-
-  </div>
-
-</body>
-</html>
-  
-  
+  <!-- Footer -->
+  <
